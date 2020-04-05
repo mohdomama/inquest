@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block body %}
+  <h1> This is {{ title }} </h1>
+  <h2> Welcome Home </h2>
+
+{{ user }}
+{{ request.user }}
+{{ request.path }}
+{{ user.is_authenticated}}
+<br>
+{% if user.is_authenticated %}
+ User is Authenticated
+{% endif %}
+
+
+<br>
+We will receive the following data only when user is authenticated!
+{% for item in auth_items %}
+  <li> {{ item }} </li>
+{% endfor %}
+
+{% endblock %}
