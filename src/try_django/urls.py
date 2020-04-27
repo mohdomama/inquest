@@ -22,7 +22,7 @@ from .views import (
     about_page,
     contact_page,
     example_page,
-) 
+)
 
 urlpatterns = [
     path('blogs/', include('blog.urls')),
@@ -31,4 +31,4 @@ urlpatterns = [
     path('contact/', contact_page),
     path('about', about_page),
     path('example', example_page),
-] 
+]
