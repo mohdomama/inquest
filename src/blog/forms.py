@@ -16,5 +16,6 @@ class BlogPostModelForm(forms.ModelForm):
     def clean_title(self, *args, **kwargs):
         title = self.cleaned_data.get('title')
         if 'omama' in title:
-            raise forms.ValidationError("Title can't contain developer name")
+            raise forms.ValidationError(
+                "Title can't contain developer name")
         return title

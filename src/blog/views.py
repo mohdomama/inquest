@@ -4,11 +4,13 @@ from django.shortcuts import render, get_object_or_404
 from .models import BlogPost
 from .forms import BlogPostModelForm
 
+
 def blog_post_detail_page(request, slug):
     obj = get_object_or_404(BlogPost, slug=slug)
-    template_name = 'blog/detail.html' 
+    template_name = 'blog/detail.html'
     context = {"object": obj}
     return render(request, template_name, context)
+
 
 def blog_post_list_page(request):
     qs = BlogPost.objects.all()
@@ -16,17 +18,20 @@ def blog_post_list_page(request):
     context = {"objects": qs}
     return render(request, template_name, context)
 
+
 def blog_post_delete_page(request, slug):
     obj = get_object_or_404(BlogPost, slug=slug)
-    template_name = 'blog/delete.html' 
+    template_name = 'blog/delete.html'
     context = {"object": obj}
     return render(request, template_name, context)
 
+
 def blog_post_update_page(request, slug):
     obj = get_object_or_404(BlogPost, slug=slug)
-    template_name = 'blog/update.html' 
+    template_name = 'blog/update.html'
     context = {"object": obj}
     return render(request, template_name, context)
+
 
 def blog_post_create_page(request):
     # Using Django Form
@@ -48,4 +53,3 @@ def blog_post_create_page(request):
     template_name = 'blog/create.html'
     context = {'form': form}
     return render(request, template_name, context)
-    
