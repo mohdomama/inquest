@@ -25,10 +25,9 @@ def about_page(request):
 def contact_page(request):
     return render(request, "contact.html", {'title': "Contact Page"})
 
-# This is a more standard way
-
 
 def example_page(request):
+    # This is a more standard way
     context = {'title': 'Example Page'}
     template_name = 'example.html'  # This can be any file type
     template_obj = get_template(template_name)
