@@ -1,5 +1,10 @@
 .vscode/
 
+#App Secrets#
+*.env
+
+
+
 # Django #
 *.log
 *.pot
