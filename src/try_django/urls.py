@@ -28,7 +28,7 @@ urlpatterns = [
     path('account/', include('account.urls')),
     path('blogs/', include('blog.urls')),
     path('admin/', admin.site.urls),
-    path('', home_page),
+    path('', home_page, name='home'),
     path('contact/', contact_page),
     path('about', about_page),
     path('example', example_page),
