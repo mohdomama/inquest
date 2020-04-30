@@ -1,23 +1,14 @@
 {% extends "base.html" %}
 
 {% block body %}
-  <h1> This is {{ title }} </h1>
-  <h2> Welcome Home </h2>
 
-{{ user }}
-{{ request.user }}
-{{ request.path }}
-{{ user.is_authenticated}}
+User Is Authenticated: {{user.is_authenticated}}
 <br>
-{% if user.is_authenticated %}
- User is Authenticated
+
+{% if request.user.is_authenticated %}
+<a href="{% url 'account_logout' %}">Logout</a>
+{% else %}
+<a href="{% url 'account_login' %}">Login</a>
 {% endif %}
-
-
-<br>
-We will receive the following data only when user is authenticated!
-{% for item in auth_items %}
-  <li> {{ item }} </li>
-{% endfor %}
 
 {% endblock %}

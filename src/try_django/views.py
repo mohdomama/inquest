@@ -4,17 +4,7 @@ from django.template.loader import get_template
 
 
 def home_page(request):
-    if request.user.is_authenticated:
-        context = {
-            'title': "Home Page",
-            'auth_items': [
-                1,
-                2,
-                3,
-                4,
-                5]}
-    else:
-        context = {'title': 'Home Page'}
+    context = {'title': 'Home Page'}
     return render(request, "home.html", context)
 
 
