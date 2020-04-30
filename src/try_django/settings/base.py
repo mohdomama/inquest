@@ -29,6 +29,11 @@ DEBUG = env('DEBUG')
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = env('SECRET_KEY')
 
+EMAIL_USE_TLS = env('EMAIL_USE_TLS')
+EMAIL_HOST = env('EMAIL_HOST')
+EMAIL_HOST_USER = env('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
+EMAIL_PORT = env('EMAIL_PORT')
 
 # Build paths inside the project like this: os.path.join(BASE_DIR,
 # ...)
