@@ -1,6 +1,5 @@
 from django.shortcuts import render, get_object_or_404
-
-# Create your views here.
+from django.contrib.auth.decorators import login_required
 from .models import BlogPost
 from .forms import BlogPostModelForm
 
@@ -32,7 +31,7 @@ def blog_post_update_page(request, slug):
     context = {"object": obj}
     return render(request, template_name, context)
 
-
+@login_required(redirect_field_name='next')
 def blog_post_create_page(request):
     # Using Django Form
     # form = BlogPostForm(request.POST or None)
