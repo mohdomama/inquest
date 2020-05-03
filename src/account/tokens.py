@@ -3,6 +3,9 @@ from django.utils import six
 
 
 class TokenGenerator(PasswordResetTokenGenerator):
+    ''' six is used for string compatibility between python 2 and 3
+    TODO: Drop six, it will be depricated
+    '''
     def _make_hash_value(self, user, timestamp):
         return (
             six.text_type(user.pk) + six.text_type(timestamp) +

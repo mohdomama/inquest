@@ -31,6 +31,7 @@ def blog_post_update_page(request, slug):
     context = {"object": obj}
     return render(request, template_name, context)
 
+
 @login_required(redirect_field_name='next')
 def blog_post_create_page(request):
     # Using Django Form
@@ -45,7 +46,6 @@ def blog_post_create_page(request):
     form = BlogPostModelForm(request.POST or None)
     if form.is_valid():
         print(form.cleaned_data)
-        # dictionary unacking
         form.save()
         form = BlogPostModelForm()
 
