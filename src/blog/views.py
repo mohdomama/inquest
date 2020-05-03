@@ -45,7 +45,9 @@ def blog_post_create_page(request):
     # Using ModelForm
     form = BlogPostModelForm(request.POST or None)
     if form.is_valid():
-        print(form.cleaned_data)
+        obj = form.save(commit=False)
+        obj.user = request.user
+        obj.save()
         form.save()
         form = BlogPostModelForm()
 
