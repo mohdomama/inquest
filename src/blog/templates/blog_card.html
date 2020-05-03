@@ -1,0 +1,27 @@
+<div class="col mb-4">
+    <!-- Card -->
+    <div class="card">
+        <!-- Card image -->
+        <div class="view overlay">
+          <img class="card-img-top" src="https://picsum.photos/300/200"
+            alt="Representationl Image">
+          <a href="#!">
+            <div class="mask rgba-white-slight"></div>
+          </a>
+        </div>
+      
+        <!-- Card content -->
+        <div class="card-body">
+      
+          <!-- Title -->
+          <h4 class="card-title">{{ data.title }}</h4>
+          <!-- Text -->
+          <p class="card-text">{{ data.content | truncatechars:turn_len }}.</p>
+          <!-- Button -->
+          <a href="#" class="btn btn-danger ">Read More</a>
+      
+        </div>
+      
+      </div>
+      <!-- Card -->
+  </div>

@@ -1,9 +1,11 @@
 {% extends "base.html" %}
 
+
 {% block body %}
+<h1 class="display-2 text-danger"> Latest Articles</h1>
+    <div class="row row-cols-md-3">
     {% for object in objects %}
-        <h1> {{ object.title }}</h1>
-        <p> {{ object.content }}</p>
-        <hr>
+        {% include 'blog_card.html' with data=object turn_len=60 %}
     {% endfor %}
+    </div>
 {% endblock %}

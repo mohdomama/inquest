@@ -48,7 +48,6 @@ def blog_post_create_page(request):
         obj = form.save(commit=False)
         obj.user = request.user
         obj.save()
-        form.save()
         form = BlogPostModelForm()
 
     template_name = 'blog/create.html'
