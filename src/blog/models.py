@@ -12,6 +12,7 @@ class BlogPost(models.Model):
     title = models.CharField(max_length=32)
     slug = models.SlugField(unique=True)
     content = models.TextField(null=True, blank=True, max_length=512)
+    published = models.DateTimeField(auto_now_add=True, blank=True)
 
     # Not the best approach
     def save(self, *args, **kwargs):
