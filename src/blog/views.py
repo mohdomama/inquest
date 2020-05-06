@@ -12,7 +12,11 @@ def blog_post_detail_page(request, slug):
 
 
 def blog_post_list_page(request):
-    qs = BlogPost.objects.all()
+    # Models have an objects attr. We can add filters to it with ModelManager
+
+    # We can also call BlogPost.objects.all().recent() because of custom querrysets
+    qs = BlogPost.objects.recent()
+
     template_name = 'blog/list.html'
     context = {"objects": qs}
     return render(request, template_name, context)
