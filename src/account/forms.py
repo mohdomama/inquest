@@ -1,12 +1,11 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.conf import settings
-
-
-User = settings.AUTH_USER_MODEL
+from django.contrib.auth import get_user_model
 
 
 class SignupForm(UserCreationForm):
     class Meta:
-        model = User
-        fields = []'username', 'email', 'password1', 'password2']
+        # This is the way to access user model generally
+        model = get_user_model()
+        fields = ['username', 'email', 'password1', 'password2']

@@ -75,6 +75,8 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'inquest.urls'
+AUTH_USER_MODEL = 'account.MyUser'
+
 
 TEMPLATES = [
     {
@@ -124,7 +126,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-AUTH_USER_MODEL = 'account.MyUser'
 
 
 # Internationalization

@@ -8,9 +8,9 @@ from django.utils.http import urlsafe_base64_encode, urlsafe_base64_decode
 from django.template.loader import render_to_string
 from .tokens import account_activation_token
 from django.core.mail import EmailMessage
-from django.conf import settings
+from django.contrib.auth import get_user_model
 
-User = settings.AUTH_USER_MODEL
+User = get_user_model()
 
 
 def signup(request):

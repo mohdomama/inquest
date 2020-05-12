@@ -4,7 +4,7 @@ from django.conf import settings
 import time
 # Create your models here.
 
-# Best way to access user model
+# Best way to access user model for forein key reference
 User = settings.AUTH_USER_MODEL
 
 
