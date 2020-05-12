@@ -12,7 +12,7 @@ User Is Authenticated: {{user.is_authenticated}}
 {% endif %}
 
 <div class="row row-cols-md-4">
-{% include 'blog_card.html' with data=request.user.is_authenticated turn_len=3 %}
+{% include 'blog/card.html' with data=request.user.is_authenticated turn_len=3 %}
 </div>
 
 {% endblock %}
