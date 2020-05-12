@@ -23,9 +23,9 @@ class BlogPostManager(models.Manager):
 
 class BlogPost(models.Model):
     user = models.ForeignKey(User, default=1, on_delete=models.CASCADE)
-    title = models.CharField(max_length=32)
+    title = models.CharField(max_length=128)
     slug = models.SlugField(unique=True)
-    content = models.TextField(null=True, blank=True, max_length=512)
+    content = models.TextField(null=True, blank=True, max_length=2048)
     published = models.DateTimeField(auto_now_add=True, blank=True)
 
     objects = BlogPostManager()
