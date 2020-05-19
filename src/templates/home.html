@@ -2,17 +2,19 @@
 
 {% block body %}
 
-User Is Authenticated: {{user.is_authenticated}}
-<br>
-
-{% if request.user.is_authenticated %}
-<a href="{% url 'account_logout' %}">Logout</a>
-{% else %}
-<a href="{% url 'account_login' %}">Login</a>
-{% endif %}
+<h1 class="display-4 text-danger"> Latest</h1>
 
 <div class="row row-cols-md-4">
-{% include 'blog/card.html' with data=request.user.is_authenticated turn_len=3 %}
+    {% for object in latest %}
+    {% include 'blog/card.html' with data=object head_turn=30 body_turn=60 %}
+    {% endfor %}
+</div>
+
+<h1 class="display-4 text-danger"> Trending</h1>
+<div class="row row-cols-md-4">
+    {% for object in latest %}
+    {% include 'blog/card.html' with data=object head_turn=30 body_turn=60 %}
+    {% endfor %}
 </div>
 
 {% endblock %}

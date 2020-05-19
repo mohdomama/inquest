@@ -1,10 +1,12 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.template.loader import get_template
+from blog.models import BlogPost
 
 
 def home_page(request):
-    context = {'title': 'Home Page'}
+    qs = BlogPost.objects.recent()[:4]
+    context = {'latest': qs}
     return render(request, "home.html", context)
 
 

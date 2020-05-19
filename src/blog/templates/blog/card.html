@@ -1,13 +1,13 @@
 {% load tz %}
 <div class="col mb-4">
   <!-- Card -->
-  <div class="card">
+  <div class="card h-100 .ml-3">
 
     <!-- Card content -->
     <div class="card-body">
 
       <!-- Title -->
-      <h2 class="card-title">{{ data.title }}</h2>
+      <h3 class="card-title">{{ data.title | truncatechars:head_turn }}</h3>
       <!-- Publish Date -->
       <div class="text-muted">
         {{ data.published | localtime  }}
@@ -18,7 +18,7 @@
       </div>
       <br>
       <!-- Text -->
-      <p class="card-text">{{ data.content | truncatechars:turn_len }}.</p>
+      <p class="card-text">{{ data.content | truncatechars:body_turn }}.</p>
       <!-- Button -->
       <a href="#" class="btn btn-danger ">Read More</a>
 
